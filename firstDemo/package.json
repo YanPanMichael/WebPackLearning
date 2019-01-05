@@ -1,0 +1,16 @@
+{
+  "name": "webpack_first_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yan Pan",
+  "license": "ISC"
+}
