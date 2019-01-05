@@ -7,9 +7,13 @@
     "jQuery": "^1.7.4",
     "path": "^0.12.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^4.28.3",
+    "webpack-dev-server": "^3.1.14"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server"
   },
   "author": "Yan Pan",
   "license": "ISC"
