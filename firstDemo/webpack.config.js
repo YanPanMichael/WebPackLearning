@@ -50,6 +50,11 @@ module.exports = {
       {
         test: /\.(ttf|eot|svg|woff|woff2)$/,
         use: 'url-loader'
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/ //babel转化高级js语法
       }
     ]
   }

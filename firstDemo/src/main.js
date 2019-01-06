@@ -11,3 +11,12 @@ $(function() {
     return '#' + 'D97634'
   })
 })
+
+class Person {
+  static info = {
+    name: "K",
+    age: 78
+  }
+}
+
+console.log(Person.info);
