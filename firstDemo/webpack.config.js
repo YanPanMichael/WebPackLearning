@@ -14,9 +14,9 @@ module.exports = {
   },
   devServer: { //启用webpack-dev-server配置参数的第二种形式
     //  --open --port 3000 --contentBase src --hot
+    // contentBase: 'src'
     open: true,
     port: 3000,
-    contentBase: 'src',
     hot: true // 第一步
   },
   plugins: [
@@ -46,6 +46,10 @@ module.exports = {
       {
         test: /\.(jpg|png|gif|bmp|jpeg)$/,
         use: 'url-loader?limit=100000&name=[hash:8]-[name].[ext]'
+      },
+      {
+        test: /\.(ttf|eot|svg|woff|woff2)$/,
+        use: 'url-loader'
       }
     ]
   }

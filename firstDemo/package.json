@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "path": "^0.12.7"
   },
   "devDependencies": {
