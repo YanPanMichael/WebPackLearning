@@ -42,6 +42,10 @@ module.exports = {
             'css-loader',
             'sass-loader'
         ]
+      },
+      {
+        test: /\.(jpg|png|gif|bmp|jpeg)$/,
+        use: 'url-loader?limit=100000&name=[hash:8]-[name].[ext]'
       }
     ]
   }
