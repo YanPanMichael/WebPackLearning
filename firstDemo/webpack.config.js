@@ -25,5 +25,24 @@ module.exports = {
       template: path.join(__dirname, './src/index.html'), //指定模板文件
       filename: 'index.html' //指定生成页面的名称 最好与要替换的模板文件重名
     })
-  ]
+  ],
+  module: { //这个节点， 配置说有第三方模块加载器
+    rules: [ //所有第三方模块的匹配规则
+      {
+        test: /\.css$/,
+        use: [
+            'style-loader',
+            'css-loader'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader'
+        ]
+      }
+    ]
+  }
 }
