@@ -12,7 +12,7 @@ module.exports = {
   entry: { // 配置入口节点
     index: path.join(__dirname, './src/main.js'),
     another: path.join(__dirname, './src/another-module.js'),
-    vendors1: ['jquery'] // 把要抽离的第三方包的名称，放到这个数组中
+    // vendors1: ['jquery'] // 把要抽离的第三方包的名称，放到这个数组中
   },
   output: {
     path: path.join(__dirname, './dist'),
@@ -29,13 +29,13 @@ module.exports = {
       }
     }),
     // new cleanWebpackPlugin(['dist']),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendors1', // 指定要抽离的入口名称
+    //   filename: 'js/vendors.js' // 将来再发布的时候，除了会有一个 bundle.js ，还会多一个 vendors.js 的文件，里面存放了所有的第三方包
+    // }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors1', // 指定要抽离的入口名称
-      filename: 'js/vendors.js' // 将来再发布的时候，除了会有一个 bundle.js ，还会多一个 vendors.js 的文件，里面存放了所有的第三方包
+     name: 'common', // 直接name: common就可以实现自动抽取公共依赖
     }),
-    //new webpack.optimize.CommonsChunkPlugin({
-    //  name: 'common', // 直接name: common就可以实现自动抽取公共依赖
-    //}),
     new webpack.optimize.UglifyJsPlugin({
       compress: { // 配置压缩选项
         warnings: false // 移除警告
