@@ -13,17 +13,21 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: { //启用webpack-dev-server配置参数的第二种形式
-    //  --open --port 3000 --contentBase src --hot
+    //  --open --port 3000 --contentBase src --hot // --hot 实现浏览器的异步刷新重载 只打补丁 不重新整体生成bundle.js。 --contentBase 指定托管的根目录
     // contentBase: 'src'
     open: true,
     port: 3000,
     hot: true // 第一步
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(), // webpack.HotModuleReplacementPlugin本身是类，那么它就有构造函数, new一个实例
+    new webpack.HotModuleReplacementPlugin(), // 第三步，webpack.HotModuleReplacementPlugin本身是类，那么它就有构造函数, new一个实例
     new htmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'), //指定模板文件
       filename: 'index.html' //指定生成页面的名称 最好与要替换的模板文件重名
+    }),
+    new htmlWebpackPlugin({
+      template: path.join(__dirname, './src/index.html'),
+      filename: 'index.html'
     })
   ],
   module: { //这个节点， 配置说有第三方模块加载器
