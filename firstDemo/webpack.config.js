@@ -24,10 +24,6 @@ module.exports = {
     new htmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'), //指定模板文件
       filename: 'index.html' //指定生成页面的名称 最好与要替换的模板文件重名
-    }),
-    new htmlWebpackPlugin({
-      template: path.join(__dirname, './src/index.html'),
-      filename: 'index.html'
     })
   ],
   module: { //这个节点， 配置说有第三方模块加载器
